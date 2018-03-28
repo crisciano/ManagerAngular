@@ -1,4 +1,6 @@
 export class Conf{
+    sobre: string
+    empresa: string
     endereco: string
     telefone: number | string
     whatsapp: number | string
@@ -8,4 +10,6 @@ export class Conf{
     instagram: string
     plus: string
     linkedin: string
+    lat: number
+    lng: number
 }

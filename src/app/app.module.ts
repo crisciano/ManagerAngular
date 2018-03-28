@@ -5,6 +5,7 @@ import { UserService } from './users/user.service'
 import { LoginService } from './login/login.service'
 import { AuthService } from './auth/auth.service'
 import { GuardGuard } from './guard/guard.guard'
+import { AgmCoreModule } from '@agm/core'
 
 
 import { AppComponent } from './app.component';
@@ -33,7 +34,10 @@ import { ConfService } from './conf/conf.service';
     BrowserModule,
     routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDiNR2jlSw14QuwXiKyaam_tUuvDZttAvk'
+    })
   ],
   providers: [
     UserService,
