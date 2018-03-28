@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms'
 import { UserService } from './users/user.service'
 import { LoginService } from './login/login.service'
 import { AuthService } from './auth/auth.service'
+import { GuardGuard } from './guard/guard.guard'
 
 
 import { AppComponent } from './app.component';
@@ -35,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     UserService,
+    GuardGuard,
     LoginService,
     AuthService
   ],

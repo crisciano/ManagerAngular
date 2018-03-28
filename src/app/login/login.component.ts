@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Login } from '../login/login'
-import { UserService } from '../users/user.service'
 import { AuthService } from '../auth/auth.service'
 
 @Component({
@@ -9,11 +8,9 @@ import { AuthService } from '../auth/auth.service'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  // user: Usuario = new Usuario();
   login: Login = new Login();
 
-  constructor( private userService: UserService, private authService: AuthService ) { }
+  constructor( private authService: AuthService ) { }
 
   ngOnInit() {
     // this.userService.getUsers()

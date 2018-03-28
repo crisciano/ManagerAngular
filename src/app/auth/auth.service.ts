@@ -18,9 +18,8 @@ export class AuthService {
           console.log('auth');
           this.router.navigate(['/users']);
           return true;
-
         }
-        console.log(user);
+        // console.log(user);
       }) 
     )
 
