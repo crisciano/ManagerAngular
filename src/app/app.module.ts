@@ -16,6 +16,7 @@ import { ErrorComponent } from './error/error.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ConfService } from './conf/conf.service';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserService,
     GuardGuard,
     LoginService,
-    AuthService
+    AuthService,
+    ConfService
   ],
   bootstrap: [AppComponent]
 })

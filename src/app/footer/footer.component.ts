@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfService } from '../conf/conf.service'
+import { Conf } from '../conf/conf'
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  conf: Conf = new Conf;
+
+  constructor( private confService: ConfService) { }
 
   ngOnInit() {
+    this.confService.getConf()
+      .subscribe( (res: Conf)=> {
+        console.log(res)  
+        this.conf = res
+      })
   }
 
 }
