@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AgmCoreModule } from '@agm/core'
 import { ConfService } from '../conf/conf.service'
 import { Conf } from '../conf/conf' 
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -21,20 +22,16 @@ export class HomeComponent implements OnInit {
   // lat: number
   // lng: number
 
-  constructor( private confService: ConfService) { }
+  constructor( private confService: ConfService, private http: HttpClient) { }
 
   ngOnInit() {
-    
-  }
-  ngAfterViewInit(){
     this.confService.getConf()
-      .subscribe( (res: Conf) =>{ 
-      // this.lat = res.lat;
-      // this.lng = res.lng;
-      // console.log( ` ${res.lat} -  ${res.lng}  ` );
-        
+      .subscribe( (res: Conf) =>{         
         this.conf = res
-      })
+      })    
+  }
+
+  ngAfterViewInit(){
 
   }
 

@@ -18,6 +18,8 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfService } from './conf/conf.service';
+import { InstaComponent } from './insta/insta.component';
+import { InstaService } from './insta/insta.service';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { ConfService } from './conf/conf.service';
     HomeComponent,
     ErrorComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    InstaComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { ConfService } from './conf/conf.service';
     GuardGuard,
     LoginService,
     AuthService,
-    ConfService
+    ConfService,
+    InstaService
   ],
   bootstrap: [AppComponent]
 })

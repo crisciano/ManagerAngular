@@ -12,4 +12,5 @@ export class Conf{
     linkedin: string
     lat: number
     lng: number
+    tokenInsta: string
 }

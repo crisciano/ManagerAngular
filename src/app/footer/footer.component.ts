@@ -16,7 +16,7 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
     this.confService.getConf()
       .subscribe( (res: Conf)=> {
-        console.log(res)  
+        // console.log(res)  
         this.conf = res
       })
   }
