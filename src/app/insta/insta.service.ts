@@ -8,6 +8,7 @@ import { Img  } from './img'
 export class InstaService {
 
   imgs: Img = new Img;
+  newObj: any = [];
   token: string;
 
   constructor(private http: HttpClient, private confService: ConfService) { }
@@ -22,10 +23,11 @@ export class InstaService {
           }
           this.imgs.link = obj.link
           // this.img.description = obj.caption['text'];
-          // console.log(obj );
+          console.log( this.imgs );
+          // this.imgs.push(this.newObj);
         });
       }) 
-      
+      return this.imgs
   }
 
   getToken(){
