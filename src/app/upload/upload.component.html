@@ -1,0 +1,29 @@
+<section class="mt-5 mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="text-uppercase">upload</h2>
+      </div>
+      <div class="col-10 offset-1">
+        <form  method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nome</label>
+            <input type="text" name="nome" [(ngModel)]="upload.nome" class="form-control" placeholder="Enter nome">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" name="email" [(ngModel)]="upload.email" class="form-control" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" id="fileimagem" [(ngModel)]="upload.file" [ngModelOptions]="{standalone:true}" class="form-control-file">
+            <!-- <input type="file" id="fileimagem" [(ngModel)]="upload.file" [ngModelOptions]="{standalone:true}"  (change)="fileChange($event)" class="form-control-file"> -->
+            <!-- <input type="file" name="file" accept="imge/*" [(ngModel)]="upload.file" [ngModelOptions]="{standalone:true}"  class="form-control-file"> -->
+            <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+          </div>
+          <button type="submit" (click)="cadastrar($event)" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

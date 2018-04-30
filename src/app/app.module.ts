@@ -6,6 +6,7 @@ import { LoginService } from './login/login.service'
 import { AuthService } from './auth/auth.service'
 import { GuardGuard } from './guard/guard.guard'
 import { AgmCoreModule } from '@agm/core'
+import { HttpModule } from '@angular/http'
 
 
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConfService } from './conf/conf.service';
 import { InstaComponent } from './insta/insta.component';
 import { InstaService } from './insta/insta.service';
+import { UploadComponent } from './upload/upload.component';
 
 
 @NgModule({
@@ -31,13 +33,15 @@ import { InstaService } from './insta/insta.service';
     ErrorComponent,
     MenuComponent,
     FooterComponent,
-    InstaComponent
+    InstaComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
     HttpClientModule,
+    HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDiNR2jlSw14QuwXiKyaam_tUuvDZttAvk'
     })
