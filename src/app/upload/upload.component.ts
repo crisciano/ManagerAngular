@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { RequestOptions, Headers, Http } from '@angular/http'
 import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
@@ -17,6 +17,8 @@ export class UploadComponent implements OnInit {
   options: RequestOptions;
   upload: Upload = new Upload();
   formData: FormData = new FormData();
+  @ViewChild('File') File: any;
+
 
   constructor(
     private http: Http,
@@ -41,8 +43,10 @@ export class UploadComponent implements OnInit {
       let file: File = fileList[0];
       // this.formData:FormData = new FormData();
       this.upload.file = event.target.files;
-      // this.formData.append('uploadFile', fileList[0], file.name);
-      console.log(event.target.files);
+      this.formData.append('image', fileList[0]);
+      console.log(file);
+
+      // $('#fileimagem')[0].files[0];
 
       // this.http.post(this.url, this.formData, this.options)
       //   .subscribe(res=> console.log(res));
@@ -53,7 +57,7 @@ export class UploadComponent implements OnInit {
     
     // console.log(event.target.files);
     // console.log(this.upload);
-    this.formData.append('image', $('#fileimagem')[0].files[0]);
+    // this.formData.append('image', $('#fileimagem')[0].files[0]);
     this.formData.append('nome', this.upload.nome)
     this.formData.append('email', this.upload.email)
 
@@ -74,13 +78,11 @@ export class UploadComponent implements OnInit {
     //     }
     // });
 
-    console.log(this.formData);
-    
-
     this.http.post(this.url, this.formData, this.options)
         .subscribe(res=>{ 
           if(res.status == 200){
             this.upload = new Upload();
+            this.File.nativeElement.value = '';
           }
           console.log(res)
         });
