@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Erro OBSERVABLE
+Erro na hora de compilar proveniente do `Observable`
+remove package-lock.json
+remove node_module
+install o node_module `npm install`
+restart project `ng serve`
+
+## ERRO OBSERVABLE
+intall o compat
+`npm i rxjs-compat`
